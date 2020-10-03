@@ -1,26 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import logo from '../assets/logo.png';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
-export default function Login({ navigation }) {
+export default function LoginForm({ text , route}) {
     return (
         <View style={styles.container}>
-            <Image
-                source={logo} />
+            
+            <Text>{ JSON.stringify(text) }</Text>
+
+            <TextInput />
+
+            <TextInput />
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { navigation.navigate('LoginForm', { text: 'Fazer Login Como Aluno', route: 'Aluno' })} }>
-                <Text style={styles.btnText}>Login como Aluno</Text>
+                onPress={() => { alert('botão pressionado')}}>
+                <Text style={styles.btnText}>Fazer Login</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-                style={styles.btn}
-                onPress={() =>  { navigation.navigate('LoginForm', { text: 'Fazer Login Como Professor', route: 'Aluno' })} }>
-                    <Text style={styles.btnText}>Login como Professor</Text>
-            </TouchableOpacity>
+            <Text>Ainda não possui cadastro?</Text>
         </View>
+
     );
 }
 
