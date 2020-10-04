@@ -9,7 +9,7 @@ export default function LoginForm({ route , navigation}) {
 
     const routeTo = route.params.route;
 
-    const { signIn } = React.useContext(AuthContext);
+    const { signInAluno, signInProfessor } = React.useContext(AuthContext);
 
 
     return (
@@ -35,7 +35,7 @@ export default function LoginForm({ route , navigation}) {
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { signIn() }}>
+                onPress={() => { { routeTo == 'Cadastro de Aluno' ? signInAluno() : signInProfessor() } }}>
                     <Text style={styles.btnText}>Fazer Login</Text>
             </TouchableOpacity>
 

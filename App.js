@@ -25,7 +25,8 @@ export default function App() {
 
   const authContext = React.useMemo(() => {
     return {
-      signInAluno: () => { setUserToken('teste') },
+      signInAluno: () => { setUserToken('Aluno') },
+      signInProfessor: () => { setUserToken('Professor') },
       signOut: () => { setUserToken(null) }
     }
   })
@@ -37,6 +38,11 @@ export default function App() {
         { userToken ?
           <Drawer.Navigator>
             <Drawer.Screen name="Início" component={Inicio} />
+            { userToken == 'Aluno' ?
+                <Drawer.Screen name="Minha Conta" component={ContaAluno} />
+              :
+              <Drawer.Screen name="Minha Conta" component={ContaProfessor} />
+            }
           </Drawer.Navigator>
           :
           <MainPage.Navigator>
