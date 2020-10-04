@@ -24,6 +24,7 @@ export default function LoginForm({ route , navigation}) {
             <TextInput style={styles.input}
                 underlineColorAndroid="transparent"
                 placeholder="Senha"
+                secureTextEntry={true}
                 placeholderTextColor="silver"
                 autoCapitalize="none"
             />

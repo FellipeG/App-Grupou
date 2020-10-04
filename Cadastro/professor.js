@@ -35,6 +35,7 @@ export default function CadastroProfessor({ navigation }) {
             <TextInput style={styles.input}
                 underlineColorAndroid="transparent"
                 placeholder="Senha"
+                secureTextEntry={true}
                 placeholderTextColor="silver"
                 autoCapitalize="none"
             />
