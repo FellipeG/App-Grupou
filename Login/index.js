@@ -11,13 +11,13 @@ export default function Login({ navigation }) {
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { navigation.push('Aluno')} }>
+                onPress={() => { navigation.push('Aluno',{ route: 'Cadastro de Aluno' })} }>
                 <Text style={styles.btnText}>Login como Aluno</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() =>  { navigation.push('Professor')} }>
+                onPress={() =>  { navigation.push('Professor', { route: 'Cadastro de Professor' })} }>
                     <Text style={styles.btnText}>Login como Professor</Text>
             </TouchableOpacity>
         </View>
