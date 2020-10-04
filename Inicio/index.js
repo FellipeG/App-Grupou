@@ -9,7 +9,7 @@ export default function Inicio({ navigation }) {
         <View style={styles.container}>
             <Image
                 source={logo} />
-            <Text>Seja bem vindo!</Text>
+            <Text style={styles.title}>Seja bem vindo!</Text>
             <Text>Deslize o dedo no menu lateral para ver as opções</Text>
         </View>
     );
@@ -36,5 +36,11 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 15
+    },
+    title: {
+        fontSize: 18,
+        marginTop: 10,
+        fontWeight: 'bold'
+
     }
 });
