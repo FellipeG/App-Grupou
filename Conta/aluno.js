@@ -20,6 +20,7 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Nome"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="Nome Aluno"
             />
 
             <TextInput style={styles.input}
@@ -27,6 +28,7 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Email"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="email.aluno@email.com"
             />
 
             <TextInput style={styles.input}
@@ -34,6 +36,7 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Matrícula"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="2017000000"
             />
 
             <TextInput style={styles.input}
@@ -42,6 +45,7 @@ export default function ContaAluno({ navigation }) {
                 secureTextEntry={true}
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="SenhaAluno"
             />
 
             <TextInput style={styles.input}
@@ -49,6 +53,7 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Curso"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="Ciência da Computação"
             />
 
             <TouchableOpacity

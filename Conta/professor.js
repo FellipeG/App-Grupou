@@ -9,6 +9,7 @@ export default function ContaProfessor({ navigation }) {
 
     const { signOut } = React.useContext(AuthContext);
 
+
     return (
         <View style={styles.container}>
 
@@ -20,6 +21,7 @@ export default function ContaProfessor({ navigation }) {
                 placeholder="Nome"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="Nome Professor"
             />
 
             <TextInput style={styles.input}
@@ -27,6 +29,7 @@ export default function ContaProfessor({ navigation }) {
                 placeholder="Email"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="email.professor@email.com"
             />
 
             <TextInput style={styles.input}
@@ -34,6 +37,7 @@ export default function ContaProfessor({ navigation }) {
                 placeholder="CPF"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="111.111.111-11"
             />
 
             <TextInput style={styles.input}
@@ -42,6 +46,7 @@ export default function ContaProfessor({ navigation }) {
                 secureTextEntry={true}
                 placeholderTextColor="silver"
                 autoCapitalize="none"
+                value="SenhaProfessor"
             />
 
             <TouchableOpacity
