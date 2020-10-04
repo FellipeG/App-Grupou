@@ -1,16 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
 import logo from '../assets/logo.png';
 
-import { AuthContext } from '../context'
-
-export default function LoginForm({ route , navigation}) {
-
-    const routeTo = route.params.route;
-
-    const { signIn } = React.useContext(AuthContext);
-
+export default function ContaAluno({ navigation }) {
 
     return (
         <View style={styles.container}>
@@ -20,7 +13,21 @@ export default function LoginForm({ route , navigation}) {
 
             <TextInput style={styles.input}
                 underlineColorAndroid="transparent"
+                placeholder="Nome"
+                placeholderTextColor="silver"
+                autoCapitalize="none"
+            />
+
+            <TextInput style={styles.input}
+                underlineColorAndroid="transparent"
                 placeholder="Email"
+                placeholderTextColor="silver"
+                autoCapitalize="none"
+            />
+
+            <TextInput style={styles.input}
+                underlineColorAndroid="transparent"
+                placeholder="Matrícula"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
             />
@@ -33,14 +40,19 @@ export default function LoginForm({ route , navigation}) {
                 autoCapitalize="none"
             />
 
+            <TextInput style={styles.input}
+                underlineColorAndroid="transparent"
+                placeholder="Curso"
+                placeholderTextColor="silver"
+                autoCapitalize="none"
+            />
+
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { signIn() }}>
-                    <Text style={styles.btnText}>Fazer Login</Text>
+                onPress={() => { navigation.goBack() }}>
+                    <Text style={styles.btnText}>Fazer Cadastro</Text>
             </TouchableOpacity>
 
-            <Text style={styles.cadastroMsg}>Ainda não possui cadastro?</Text>
-            <Button title="Cadastrar" onPress={() => { navigation.push(routeTo) }} />
         </View>
 
     );
@@ -78,9 +90,5 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         borderColor: 'silver',
         borderWidth: 1
-    },
-    cadastroMsg: {
-        marginTop: 60,
-        fontSize: 18
     }
 });
