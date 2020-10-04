@@ -26,7 +26,7 @@ tocante a formação de grupos de trabalho.
 - Tela de cadastro
 - Diferentes tipos de navegação (stack, drawer, etc)
 
-## Instação
+## Instalação
 
 - yarn install
 - yarn start
