@@ -1,0 +1,21 @@
+version: '3'
+services:
+    node_grupou:
+        image: 'node'
+        container_name: 'node_grupou'
+        working_dir: /var/www
+        ports: 
+            - "19000:19000"
+            - "19001:19001"
+            - "19002:19002"
+        command: bash -c "npm install -g expo-cli && tail -f /dev/null"
+        environment: 
+            REACT_NATIVE_PACKAGER_HOSTNAME: '192.168.0.110'
+        volumes: 
+            - ./:/var/www
+        networks: 
+            - node_network
+
+networks:
+    node_network:
+        driver: bridge
