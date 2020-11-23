@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import Login from './pages/Login'
-import LoginForm from './pages/Login/login_form';
+import LoginForm from './pages/Login/Form';
 import CadastroAluno from './pages/Cadastro/aluno';
 import CadastroProfessor from './pages/Cadastro/professor';
 import Inicio from './pages/Inicio'

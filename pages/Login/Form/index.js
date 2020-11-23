@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, Button } from 'react-native';
-import logo from '../../assets/logo.png';
+import logo from '../../../assets/logo.png';
 
-import { AuthContext } from '../../context'
+import { AuthContext } from '../../../context'
 
 export default function LoginForm({ route , navigation}) {
 
