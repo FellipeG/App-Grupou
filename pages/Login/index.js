@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function Login({ navigation }) {

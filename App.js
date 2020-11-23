@@ -4,15 +4,15 @@ import React, { useState } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
-import {createDrawerNavigator } from '@react-navigation/drawer'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import Login from './Login/index'
-import LoginForm from './Login/login_form';
-import CadastroAluno from './Cadastro/aluno';
-import CadastroProfessor from './Cadastro/professor';
-import Inicio from './Inicio/index'
-import ContaProfessor from './Conta/professor'
-import ContaAluno from './Conta/aluno'
+import Login from './pages/Login'
+import LoginForm from './pages/Login/login_form';
+import CadastroAluno from './pages/Cadastro/aluno';
+import CadastroProfessor from './pages/Cadastro/professor';
+import Inicio from './pages/Inicio'
+import ContaProfessor from './pages/Conta/professor'
+import ContaAluno from './pages/Conta/aluno'
 
 import { AuthContext } from './context'
 

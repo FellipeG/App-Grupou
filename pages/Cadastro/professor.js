@@ -1,13 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 
-import { AuthContext } from '../context'
-
-export default function ContaAluno({ navigation }) {
-
-    const { signOut } = React.useContext(AuthContext);
+export default function CadastroProfessor({ navigation }) {
 
     return (
         <View style={styles.container}>
@@ -20,7 +16,6 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Nome"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
-                value="Nome Aluno"
             />
 
             <TextInput style={styles.input}
@@ -28,15 +23,13 @@ export default function ContaAluno({ navigation }) {
                 placeholder="Email"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
-                value="email.aluno@email.com"
             />
 
             <TextInput style={styles.input}
                 underlineColorAndroid="transparent"
-                placeholder="Matrícula"
+                placeholder="CPF"
                 placeholderTextColor="silver"
                 autoCapitalize="none"
-                value="2017000000"
             />
 
             <TextInput style={styles.input}
@@ -45,21 +38,12 @@ export default function ContaAluno({ navigation }) {
                 secureTextEntry={true}
                 placeholderTextColor="silver"
                 autoCapitalize="none"
-                value="SenhaAluno"
-            />
-
-            <TextInput style={styles.input}
-                underlineColorAndroid="transparent"
-                placeholder="Curso"
-                placeholderTextColor="silver"
-                autoCapitalize="none"
-                value="Ciência da Computação"
             />
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { signOut() }}>
-                    <Text style={styles.btnText}>Deslogar</Text>
+                onPress={() => { navigation.goBack() }}>
+                    <Text style={styles.btnText}>Fazer Cadastro</Text>
             </TouchableOpacity>
 
         </View>
@@ -77,7 +61,7 @@ const styles = StyleSheet.create({
 
     btn: {
         borderRadius: 30,
-        backgroundColor: '#c50000',
+        backgroundColor: '#1c90ce',
         width: '70%',
         alignItems: 'center',
         paddingTop: 20,
