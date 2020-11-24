@@ -1,23 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
 
-import { AppContainer, LoginContainer, Texto } from './styles';
+import { 
+    AppContainer,
+    LoginContainer,
+    Texto,
+    BotaoAba,
+    BotaoTexto,
+    BotaoContainer,
+    Input,
+    InputTexto } from './styles';
 
 export default function Login({ navigation }) {
+
+    const [currentButton, setCurrentButton] = useState('aluno');
+
     return (
         <AppContainer>
             <LoginContainer>
-                <TouchableOpacity
-                    onPress={() => { navigation.push('Aluno',{ route: 'Cadastro de Aluno' })} }>
-                    <Text>Login como Aluno</Text>
-                </TouchableOpacity>
+                <BotaoContainer>
+                    <BotaoAba
+                        lastClick={currentButton === 'aluno'}
+                        onPress={() => { setCurrentButton('aluno'); navigation.push('Aluno',{ route: 'Cadastro de Aluno' })} }>
+                        <BotaoTexto>Aluno</BotaoTexto>
+                    </BotaoAba>
 
-                <TouchableOpacity
-                    onPress={() =>  { navigation.push('Professor', { route: 'Cadastro de Professor' })} }>
-                        <Text>Login como Professor</Text>
-                </TouchableOpacity>
+                    <BotaoAba
+                        lastClick={currentButton === 'professor'}
+                        onPress={() =>  { setCurrentButton('professor'); navigation.push('Professor', { route: 'Cadastro de Professor' })} }>
+                            <BotaoTexto>Professor</BotaoTexto>
+                    </BotaoAba>
+                </BotaoContainer>
+                <InputTexto>Email</InputTexto>
+                <Input />
+                <InputTexto>Senha</InputTexto>
+                <Input />
             </LoginContainer>
         </AppContainer>
     );
