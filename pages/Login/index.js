@@ -24,6 +24,16 @@ import {
 export default function Login({ navigation }) {
 
     const [currentButton, setCurrentButton] = useState('aluno');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    function handleSignIn() {
+
+    }
+
+    function handleSignUp() {
+
+    }
 
     return (
         <AppContainer>
@@ -59,19 +69,25 @@ export default function Login({ navigation }) {
                     </BotaoAba>
                 </BotaoContainer>
                 <InputTexto>Email</InputTexto>
-                <Input placeholder="Digite seu email" />
+                <Input 
+                    placeholder="Digite seu email"
+                    onChangeText={ text => setEmail(text) } />
                 <InputTexto>Senha</InputTexto>
                 <Input 
                     placeholder="Digite sua senha"
-                    secureTextEntry={true} />
+                    secureTextEntry={true}
+                    onChangeText={ text => setPassword(text) } />
                 <ForgotPassword>
                     Esqueci minha senha
                 </ForgotPassword>
                 <BotaoContainer>
-                    <BotaoForm invert={true}>
+                    <BotaoForm 
+                        invert={true}
+                        onPress={ () => { handleSignUp() } }>
                         <BotaoFormTexto invert={true}>Cadastre-se</BotaoFormTexto>
                     </BotaoForm>
-                    <BotaoForm>
+                    <BotaoForm
+                        onPress={ () => { handleSignIn() } }>
                         <BotaoFormTexto>Entrar</BotaoFormTexto>
                     </BotaoForm>
                 </BotaoContainer>
