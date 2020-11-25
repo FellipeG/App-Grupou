@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import logo from '../../assets/logo.png';
+import { Image } from 'react-native'
 
 import { 
     AppContainer,
@@ -10,7 +11,15 @@ import {
     BotaoTexto,
     BotaoContainer,
     Input,
-    InputTexto } from './styles';
+    InputTexto,
+    BotaoForm,
+    BotaoFormTexto,
+    ForgotPassword,
+    Logo,
+    ViewChamadaGrupou,
+    TextoChamadaGrupou,
+    TextoGrupou } from './styles';
+
 
 export default function Login({ navigation }) {
 
@@ -18,11 +27,28 @@ export default function Login({ navigation }) {
 
     return (
         <AppContainer>
+
+            <Logo>
+                <Image source={logo} style={{ width: 300, height: 100 }} />
+            </Logo>
+
+            <ViewChamadaGrupou>
+                <TextoChamadaGrupou>
+                    Problemas para formar
+                </TextoChamadaGrupou>
+                <TextoChamadaGrupou>
+                    um grupo de trabalho
+                </TextoChamadaGrupou>
+                <TextoChamadaGrupou>
+                    o <TextoGrupou>Grupou!</TextoGrupou> resolve!
+                </TextoChamadaGrupou>
+            </ViewChamadaGrupou>
+
             <LoginContainer>
                 <BotaoContainer>
                     <BotaoAba
                         lastClick={currentButton === 'aluno'}
-                        onPress={() => { setCurrentButton('aluno'); navigation.push('Aluno',{ route: 'Cadastro de Aluno' })} }>
+                        onPress={() => { setCurrentButton('aluno'); navigation.push('Aluno', { route: 'Cadastro de Aluno' })} }>
                         <BotaoTexto>Aluno</BotaoTexto>
                     </BotaoAba>
 
@@ -33,9 +59,22 @@ export default function Login({ navigation }) {
                     </BotaoAba>
                 </BotaoContainer>
                 <InputTexto>Email</InputTexto>
-                <Input />
+                <Input placeholder="Digite seu email" />
                 <InputTexto>Senha</InputTexto>
-                <Input />
+                <Input 
+                    placeholder="Digite sua senha"
+                    secureTextEntry={true} />
+                <ForgotPassword>
+                    Esqueci minha senha
+                </ForgotPassword>
+                <BotaoContainer>
+                    <BotaoForm invert={true}>
+                        <BotaoFormTexto invert={true}>Cadastre-se</BotaoFormTexto>
+                    </BotaoForm>
+                    <BotaoForm>
+                        <BotaoFormTexto>Entrar</BotaoFormTexto>
+                    </BotaoForm>
+                </BotaoContainer>
             </LoginContainer>
         </AppContainer>
     );
