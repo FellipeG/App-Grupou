@@ -5,7 +5,7 @@ export const AppContainer = styled.View`
     flex: 1;
     padding: 10px 10px 0px 10px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 `;
 
 export const Texto = styled.Text`

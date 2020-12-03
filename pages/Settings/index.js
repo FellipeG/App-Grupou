@@ -10,7 +10,7 @@ import {
 const Settings = () => {
     return (
         <AppContainer>
-            <Texto>Chat</Texto>            
+            <Texto>Settings</Texto>            
         </AppContainer>
     );
 }
