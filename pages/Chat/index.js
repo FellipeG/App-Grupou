@@ -1,16 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import logo from '../../assets/logo.png';
-import { Image } from 'react-native'
+import React, { useState, useContext } from 'react';
+
+import { UserContext } from '../../contexts/user';
 
 import { 
     AppContainer,
     Texto } from './styles';
 
 const Chat = () => {
+
+    const { user } = useContext(UserContext);
+
     return (
         <AppContainer>
-            <Texto>Chat</Texto>            
+            <Texto>{ user }</Texto>            
         </AppContainer>
     );
 }

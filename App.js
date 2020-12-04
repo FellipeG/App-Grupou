@@ -4,11 +4,15 @@ import React, { useState } from 'react';
 
 import Routes from './routes';
 
+import { UserProvider } from './contexts/user'
+
 import './services/firebase';
 
 
 export default function App() {
   return (
-    <Routes />
+    <UserProvider>
+      <Routes />
+    </UserProvider>
   );
 }

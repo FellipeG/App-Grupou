@@ -3,11 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
 import logo from '../../assets/logo.png';
 
-import { AuthContext } from '../../context'
+export default function ContaAluno() {
 
-export default function ContaAluno({ navigation }) {
-
-    const { signOut } = React.useContext(AuthContext);
 
     return (
         <View style={styles.container}>
@@ -58,7 +55,7 @@ export default function ContaAluno({ navigation }) {
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { signOut() }}>
+                onPress={() => { }}>
                     <Text style={styles.btnText}>Deslogar</Text>
             </TouchableOpacity>
 

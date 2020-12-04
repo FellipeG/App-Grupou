@@ -3,13 +3,10 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, Image, Button } from 'react-native';
 import logo from '../../../assets/logo.png';
 
-import { AuthContext } from '../../../context'
-
 export default function LoginForm({ route , navigation}) {
 
     const routeTo = route.params.route;
 
-    const { signInAluno, signInProfessor } = React.useContext(AuthContext);
 
 
     return (
@@ -35,12 +32,12 @@ export default function LoginForm({ route , navigation}) {
 
             <TouchableOpacity
                 style={styles.btn}
-                onPress={() => { { routeTo == 'Cadastro de Aluno' ? signInAluno() : signInProfessor() } }}>
+                onPress={() => { }}>
                     <Text style={styles.btnText}>Fazer Login</Text>
             </TouchableOpacity>
 
             <Text style={styles.cadastroMsg}>Ainda não possui cadastro?</Text>
-            <Button title="Cadastrar" onPress={() => { navigation.push(routeTo) }} />
+            <Button title="Cadastrar" onPress={() => { }} />
         </View>
 
     );
