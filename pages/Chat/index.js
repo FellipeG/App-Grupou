@@ -11,7 +11,14 @@ import {
     BotaoFormTexto,
     Input,
     ContainerMessages,
-    Message } from './styles';
+    Message,
+    MessageContainer,
+    EmptyContainer,
+    RowMessageContainer,
+    UserIdentificationView,
+    UserIdentificationText,
+    HourView,
+    HourText } from './styles';
 
 import firebase from 'firebase';
 import 'firebase/firestore';
@@ -36,6 +43,13 @@ const Chat = () => {
         setMessages(data);
     };
 
+    function getTime() {
+        const now = new Date();
+        const hour = (now.getHours() < 10 ) ? `0${now.getHours()}` : now.getHours();
+        const minute = (now.getMinutes() < 10 ) ? `0${now.getMinutes()}` : now.getMinutes();
+        return `${hour}:${minute}`;
+    }
+
     useEffect(() => {
         const listener = firebase.firestore()
             .collection('mensagens').orderBy('criado_em', 'asc').onSnapshot(updateMessagesListener)
@@ -47,12 +61,14 @@ const Chat = () => {
             return;
         }
 
+
         try {
             firebase.firestore().collection('mensagens').add({
                 mensagem: newMessage,
                 lida: false,
                 enviado_por: user.email,
-                criado_em: `${date.getHours}${date.getMinutes()}${date.getSeconds()}` 
+                criado_em: `${date.getHours()}${date.getMinutes()}${date.getSeconds()}`,
+                hora: getTime()
             })
             setNewMessage('');
         } catch(err) {
@@ -63,7 +79,46 @@ const Chat = () => {
     return (
         <AppContainer>
             <ContainerMessages>
-                { messages.map(element => (<Message key={ element.id }>{ element.mensagem }</Message>)) }
+                { messages.map(element => (
+                    <>
+                    { user.email === element.enviado_por 
+                    ?
+                    <RowMessageContainer>
+                        <EmptyContainer></EmptyContainer>
+                        <MessageContainer>
+                            <UserIdentificationView>
+                                <UserIdentificationText>
+                                    Você
+                                </UserIdentificationText>
+                            </UserIdentificationView>
+                            <Message key={ element.id }>
+                                { element.mensagem }
+                            </Message>
+                            <HourView>
+                                <HourText>{ element.hora }</HourText>
+                            </HourView>
+                        </MessageContainer>
+                    </RowMessageContainer> 
+                    : 
+                    <RowMessageContainer>
+                        <MessageContainer>
+                        <   UserIdentificationView>
+                                <UserIdentificationText>
+                                    { element.enviado_por }
+                                </UserIdentificationText>
+                            </UserIdentificationView>
+                            <Message key={ element.id }>
+                                { element.mensagem }
+                            </Message>
+                            <HourView>
+                                <HourText>{ element.hora }</HourText>
+                            </HourView>
+                        </MessageContainer>
+                        <EmptyContainer></EmptyContainer>
+                    </RowMessageContainer> 
+                    }
+                    </>
+                )) }
             </ContainerMessages>
             <BotaoContainer>
                 <Input

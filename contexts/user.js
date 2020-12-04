@@ -21,7 +21,6 @@ const UserProvider = ({ children }) => {
     const signIn = (email, password) => {
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(res => {
-            console.warn(res)
         })
         .catch(err => {
             console.error(err)
@@ -31,7 +30,6 @@ const UserProvider = ({ children }) => {
     const signUp = (email, password) => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(res => {
-            console.warn(res)
         })
         .catch(err => {
             console.error(err)
@@ -41,7 +39,6 @@ const UserProvider = ({ children }) => {
     const signOut = () => {
         firebase.auth().signOut()
         .then(res => {
-            console.warn(res)
         })
         .catch(err => {
             console.error(err)

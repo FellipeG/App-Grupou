@@ -45,14 +45,51 @@ export const Input = styled.TextInput`
     margin-right: 10px;
 `;
 
-export const ContainerMessages = styled.View`
+export const ContainerMessages = styled.ScrollView`
     flex: 1;
     width: 100%;
+`;
+
+export const EmptyContainer = styled.View`
+    flex: 1;
+    width: 100%;
+`;
+
+export const RowMessageContainer = styled.View`
+    flex-direction: row;
 `;
 
 export const Message = styled.Text`
     font-size: 14px;
     text-align: justify;
-    color: #FFF;
-    padding-top: 5px;
+    color: #000;
+`;
+
+export const MessageContainer = styled.View`
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 5px;
+    flex: 5;
+`;
+
+export const UserIdentificationView = styled.View`
+    margin-bottom: 1px;
+`;
+
+export const UserIdentificationText = styled.Text`
+    font-size: 10px;
+    color: #AB1B71;
+`;
+
+export const HourView = styled.View`
+    margin-top: 1px;
+    width: 100%;
+`;
+
+export const HourText = styled.Text`
+    font-size: 9px;
+    color: silver;
+    text-align: right;
+    font-weight: bold;
 `;
