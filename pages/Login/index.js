@@ -64,13 +64,13 @@ const Login = () => {
                 <BotaoContainer>
                     <BotaoAba
                         lastClick={currentButton === 'aluno'}
-                        onPress={() => { setCurrentButton('aluno'); navigation.push('Aluno', { route: 'Cadastro de Aluno' })} }>
+                        onPress={() => { setCurrentButton('aluno') }}>
                         <BotaoTexto>Aluno</BotaoTexto>
                     </BotaoAba>
 
                     <BotaoAba
                         lastClick={currentButton === 'professor'}
-                        onPress={() =>  { setCurrentButton('professor'); navigation.push('Professor', { route: 'Cadastro de Professor' })} }>
+                        onPress={() =>  { setCurrentButton('professor'); }}>
                             <BotaoTexto>Professor</BotaoTexto>
                     </BotaoAba>
                 </BotaoContainer>
