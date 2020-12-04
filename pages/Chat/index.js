@@ -13,7 +13,7 @@ const Chat = () => {
 
     return (
         <AppContainer>
-            <Texto>{ user }</Texto>            
+            <Texto>{ user.email }</Texto>            
         </AppContainer>
     );
 }

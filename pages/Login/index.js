@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import logo from '../../assets/logo.png';
 import { Image } from 'react-native'
 
@@ -20,19 +20,25 @@ import {
     TextoChamadaGrupou,
     TextoGrupou } from './styles';
 
+import { UserContext } from '../../contexts/user';
 
-export default function Login({ navigation }) {
+
+const Login = () => {
+
+    const { signIn, signUp } = useContext(UserContext);
 
     const [currentButton, setCurrentButton] = useState('aluno');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleSignIn() {
+    
 
+    function handleSignIn() {
+        signIn(email, password);
     }
 
     function handleSignUp() {
-
+        signUp(email, password);
     }
 
     return (
@@ -95,3 +101,5 @@ export default function Login({ navigation }) {
         </AppContainer>
     );
 }
+
+export default Login;
